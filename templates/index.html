@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <title>Homepage</title>
+  </head>
+  <body>
+    <div class="container" style="margin-top: 5rem; max-width: 500px">
+      <figure class="text-left">
+        <blockquote class="blockquote">
+      <h2 style="margin-bottom: 20px;">Hair salon appointment</h2>
+      {% if message %}
+      <p class="message">{{ message | safe }}</p>
+      {% endif %}
+      <form action="/submit" method="POST">
+        <div class="mb-3">
+          <figcaption class="blockquote">
+           
+          
+          <label class="form-label" style="color: rgb(62, 62, 62)"
+            >Customer Name</label
+          ></figcaption>
+          <input
+            type="text"
+            name="customer"
+            class="form-control"
+            placeholder="Your name"
+          />
+        </div>
+        <div class="mb-3">
+          <figcaption class="blockquote">
+          <label class="form-label" style="color: rgb(62, 62, 62)"
+            >Please tell us what you would like to have done, hair cut, color
+            etc..</label
+          >
+          </figcaption>
+          <textarea
+            name="comments"
+            id=""
+            cols="10"
+            rows="3"
+            class="form-control"
+            rows="3"
+          ></textarea>
+        </div>
+      </figure>
+        <select
+          name="staff"
+          class="form-select"
+          aria-label="Default select example"
+        >
+          <option selected>Select a staff memeber</option>
+          <option value="Anna">Anna</option>
+          <option value="Bára">Bára</option>
+          <option value="Erna">Erna</option>
+          <option value="Elísa">Elísa</option>
+        </select>
+
+        <input
+          type="submit"
+          value="Submit"
+          class="btn"
+          style="color: rgb(233, 27, 140)"
+        />
+      </form>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
