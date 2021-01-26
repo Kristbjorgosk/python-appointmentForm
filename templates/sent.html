@@ -10,15 +10,31 @@
     <title>Thank you</title>
   </head>
   <body>
+  
     <div class="container" style="margin-top: 5rem; max-width: 500px">
       <figure class="text-center">
         <blockquote class="blockquote">
           <p>Your booking was successfull.</p>
         </blockquote>
-        <figcaption class="blockquote-footer">
+        <figcaption class="blockquote-footer" style="margin-bottom: 5rem;">
           Thank you for booking with us</cite>
         </figcaption>
       </figure>
+
+        <div class="card border-dark mb-3" style="max-width: 18rem; margin: 0 auto;">
+          <div class="card-header">You booking:</div>
+          <div class="card-body text-dark">
+            
+            <p class="card-text">Name: {{ booking.customer }}</p>
+            <p class="card-text">Appointment with: {{ booking.staff }} </p>
+            <p class="card-text">Service booked: {{ booking.comments }} </p>
+          </div>
+        </div>
+   
+ 
+  
+    
+    
     </div>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 

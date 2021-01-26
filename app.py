@@ -26,23 +26,22 @@ def home():
 
 @app.route('/submit', methods=["GET", 'POST'])
 def submit():
-
     if request.method == 'POST':
         customer = request.form['customer']
         staff = request.form['staff']
         comments = request.form['comments']
-        #print(customer, staff, comments)
-        return render_template("sent.html")
+        # return render_template("sent.html")
         if customer == '' or staff == '':
             return render_template('index.html', message='Please enter required fields')
-        if db.session.query(Booking).filter(Booking.customer == customer).count() == 0:
+        # if db.session.query(Booking).filter(Booking.customer == customer).count() == 0:
+        if Booking.query.filter_by(customer=customer).count() == 0:
             data = Booking(customer, staff, comments)
             db.session.add(data)
             db.session.commit()
             # send_mail(customer, staff, comments)
-            return render_template('sent.html')
+            return render_template('sent.html', booking=data)
         return render_template('index.html', message='You have already booked an appointment')
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
