@@ -10,6 +10,11 @@
     <title>All bookings</title>
   </head>
   <body>
+    <figure class="text-center">
+      <blockquote class="blockquote">
+        <p>All bookings that have been made</p>
+      </blockquote>
+    </figure>
     <div class="container" style="margin-top: 5rem; max-width: 500px">
       <!-- for loob, showing all bookings that has been made -->
       {% for booking in bookings %}
@@ -25,6 +30,13 @@
         </div>
       </div>
       {% endfor %}
+      <a
+        href="/"
+        class="btn btn-secondary"
+        style="width: 100%; margin-bottom: 5rem"
+      >
+        Go back
+      </a>
     </div>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
